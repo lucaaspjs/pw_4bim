@@ -3,35 +3,47 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
         <style>
-            #topo {
-                background-color: black;
-                height: 50px;
+            #body {
+                margin: 0 auto;
             }
-
-            #esquerda {
-                background-color: steelblue;
+            #topo {
+                background-color: #c9e2b3;
+                height: 180px;
+                text-align: center;
+                font-family: "Century Gothic";
+                font-size: 50pt;
+            }
+            
+            .div-conteudo {
                 float: left;
                 height: 300px;
                 width: 300px;
+                margin-top: 5px;
+            }
+
+            #esquerda {
+                background-color: steelblue;            
+                position: relative;
+                left: 25%;
             }
 
             #direita {
                 background-color: red;
-                float: left;
-                height: 300px;
-                width: 300px;
+                position: relative;
+                left: 33%;          
             }
         </style>
     </head>
     <body>
         <div id="main">
-            <div id="topo">Topo</div>
+            <div id="topo">Bem-vindos</div>
             <div id="conteudo">
-                <div id="esquerda">
+                <div id="esquerda" class="div-conteudo">
                     Div Esquerda
                 </div>
-                <div id="direita">
+                <div id="direita" class="div-conteudo">
                     Div Direita
                 </div>
             </div>
