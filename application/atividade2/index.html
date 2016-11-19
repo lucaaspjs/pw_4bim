@@ -12,77 +12,81 @@ and open the template in the editor.
         <link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <script src="../../assets/js/jquery.min.js" type="text/javascript"></script>
         <style>
-            .tabela{
+            .table-ex2 {
                 width: 500px;
                 height: 300px;
             }
+            
+            body, html {
+                margin: 0 auto;
+            }
         </style>
-
     </head>
     <body>
         <div class="container-fluid">
-            <table class="table table-bordered tabela">
-                <tbody>
-                    <tr>
-                        <td draggable="true">aa</td>
-                        <td draggable="true">aa</td>
-                        <td draggable="true">aa</td>
-                        <td draggable="true">aa</td>
-                    </tr>
-                    <tr>
-                        <td draggable="true"></td>
-                        <td draggable="true">aa</td>
-                        <td draggable="true"></td>
-                        <td draggable="true"></td>
-                    </tr>
-                    <tr>
-                        <td draggable="true"></td>
-                        <td draggable="true"></td>
-                        <td draggable="true">aa</td>
-                        <td draggable="true"></td>
-                    </tr>
-                    <tr>
-                        <td draggable="true"></td>
-                        <td draggable="true"></td>
-                        <td draggable="true"></td>
-                        <td draggable="true">aa</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="row">
+                <table class="table table-bordered table-ex2">
+                    <tbody>
+                        <tr>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                        </tr>
+                        <tr>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                        </tr>
+                        <tr>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                        </tr>
+                        <tr>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row"></div>
+
+            <div class="row">
+                <table class="table table-bordered table-ex2">
+                    <tbody>
+                        <tr>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                        </tr>
+                        <tr>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                        </tr>
+                        <tr>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                        </tr>
+                        <tr>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                            <td draggable="true">aa</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <script type="text/javascript">
-            var temp = "";
-            $(".tabela").mouseover(function () {
-                $(this).css("cursor", "move");
-            });
-            $("td").mousedown(function (e) {
-                e.preventDefault();
-                var novo = $(this).children("span").clone(true);
-                $("#principal").append(novo);
-                novo.css({"position": "absolute",
-                    "top": (e.pageY - parseInt(novo.css("height"))) + 'px',
-                    "left": (parseInt($(this).offset().left)) + 'px',
-                    "backgroundColor": "red"});
-                temp = novo;
-            });
-
-            $("#aqui").mouseup(function (e) {
-                $("#principal").children("span").remove();
-                $(this).text(temp.text());
-                e.preventDefault();
-            });
-            $(document).mouseup(function () {
-                $("#principal").children("span").remove();
-                temp = null;
-            });
-
-            $(document).mousemove(function (e) {
-                if (temp !== "") {
-                    temp.css({"top": (e.pageY - parseInt(temp.css("height"))) + "px",
-                        "left": e.pageX + "px"
-                    });
-                }
-            });
-        </script>
     </body>
 </html>
